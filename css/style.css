@@ -1,0 +1,60 @@
+.btn
+{
+    display: inline-flex;
+    position: relative;
+    border: none;
+    margin: 0;
+    margin-top: 10px;
+    padding: 20px 50px;
+    border-radius: 4px;
+    background-color: aquamarine;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+    overflow: hidden;
+
+    transition: background-color 250ms linear;
+}
+
+.btn::before, .btn::after{
+    display: inline-block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+
+    transition: transform 300ms linear;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.btn::before{
+    background-image: url(../images/rocket.svg);
+}
+
+.btn:hover::before,
+.btn:focus::before{
+    transform: translateY(-42px);
+}
+
+.btn::after
+{
+    position: absolute;
+    top: 50%;
+    left: 50px;
+
+    background-image: url(../images/logined.svg);
+    transform: translateY(calc(-50% + 43px));
+}
+
+.btn:hover::after,
+.btn:focus::after
+{
+    transform: translateY(-50%);
+}
+
+.btn:hover,
+.btn:focus
+{
+    background-color: red;
+}
